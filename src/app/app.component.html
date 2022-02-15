@@ -1,0 +1,38 @@
+
+<!-- <div class="containter">
+  <select placeholder="Choose Technology(Single Select)">  
+  <option value= "Choose Technology(Single Select)" disabled selected>Choose Technology(Single Select)</option>  
+  <option *ngFor = "let l of language" value="{{l}}">{{l}}</option>  
+  <option *ngFor="let web of websiteList">{{web}}</option>  </select>
+<app-header></app-header>
+</div>
+<br>   -->
+<div class="container-fluid page-body-wrapper">
+  
+ 
+  <router-outlet>
+    <nav mat-tab-nav-bar class="tab">
+      <a mat-tab-link label="Genral" *ngFor="let link of apiType" [routerLink]="link.link">
+        <b>{{link.name}}</b>
+      </a>
+      <!-- <a mat-tab-link (click)="auth_fun()" [disabled]="true">Disabled Link</a> -->
+      <!-- <mat-tab label="Auth" (click)="auth_fun()">
+        <b>Auth</b>
+      </mat-tab>
+      <mat-tab label="Eligibility">
+        <b>Eligibility</b>
+      </mat-tab> -->
+    </nav>
+  </router-outlet>
+</div>
+<!-- <button routerLink="home" routerLinkActive="active">home</button> -->
+
+
+<!-- <app-home></app-home> -->
+<!-- <app-tabs></app-tabs> -->
+<!-- <nav>
+  <ul>
+    <li><a routerLink="/home" routerLinkActive="active">First Component</a></li>
+    <li><a routerLink="/second-component" routerLinkActive="active">Second Component</a></li>
+  </ul>
+</nav> -->

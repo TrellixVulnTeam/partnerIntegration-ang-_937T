@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PartnerIntigration</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="assets/css/font-awesome.min.css"  rel="stylesheet">
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script>
+  function myFunction() {
+    var element = document.getElementById("toogle-divs");
+    element.classList.toggle("sidebar-icon-only");
+ }
+ 
+ function myFunction_small() {
+    var element = document.getElementById("sidebar");
+    element.classList.toggle("active");
+ }
+ function myFunction_hover() {
+    var element = document.getElementById("sideshow-hovr");
+    element.classList.toggle("hover-open");
+ }
+</script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="mat-typography">
+  <app-root></app-root>
+  <script src="assets/js/vendor.bundle.addons.js"></script>
+  <script src="assets/js/data-table.js"></script>
+  <script src="assets/js/tooltips.js"></script>
+  <script src="assets/js/popover.js"></script>
+	
+  <script src="assets/js/dashboard.js"></script>
+  <!-- <script>
+  (function($) {
+  'use strict';
+  $(function() {
+    $('.data-listing').DataTable({
+      "aLengthMenu": [
+        [5, 10, 15, -1],
+        [5, 10, 15, "All"]
+      ],
+      "iDisplayLength": 10,
+      "language": {
+        search: ""
+      }
+    });
+    $('#order-listing').each(function() {
+      var datatable = $(this);
+      // SEARCH - Add the placeholder for Search and Turn this into in-line form control
+      var search_input = datatable.closest('.dataTables_wrapper').find('div[id$=_filter] input');
+      search_input.attr('placeholder', 'Search');
+      search_input.removeClass('form-control-sm');
+      // LENGTH - Inline-Form control
+      var length_sel = datatable.closest('.dataTables_wrapper').find('div[id$=_length] select');
+      length_sel.removeClass('form-control-sm');
+    });
+  });
+})(jQuery);
+</script>
+<script type="text/javascript" src="/test/wp-content/themes/child/script/jquery.jcarousel.min.js"></script>
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script> -->
+</body>
+</html>

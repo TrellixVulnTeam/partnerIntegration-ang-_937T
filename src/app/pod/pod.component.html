@@ -1,0 +1,243 @@
+<!-- <app-tabs></app-tabs> -->
+<form class="example-form" [formGroup]="podForm" (ngSubmit)="register()">
+    <!-- <div *ngIf="isSubmit" class="invalid-feedback">
+         <ion-text validationText *ngIf="form.name.errors.required">
+          <p>*Name is required!</p>
+        </ion-text>
+    </div> -->
+     <!--REQUEST ID--->
+        <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput type="text" class="form-input" formControlName="requestId" placeholder="Enter Request Id">
+        <mat-error *ngIf="errorHandling('requestId', 'required')" style="color:#f70101 !important;">
+          Request Id is <strong>required!</strong>
+        </mat-error>
+        </mat-form-field>
+       <!------->
+
+        <!--DATE LAST STATUS-->
+        <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput type="text" class="form-input" formControlName="dateLastStatus" placeholder="Enter Date Last Status">
+        </mat-form-field>
+       <!------->
+
+
+
+    <!--Courier Name-->
+    <mat-form-field class="example-full-width" appearance="fill">
+    <input matInput type="text" class="form-input" formControlName="courierName" placeholder="Enter Your Courier Name">
+    <mat-error *ngIf="errorHandling('courierName', 'required')" style="color:#f70101 !important;">
+      Courier Name  is <strong>required</strong>
+    </mat-error>
+    </mat-form-field>
+    <!---------------->
+
+     <!--- RECIVERS NAME -->
+
+     <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput type="text" class="form-input" formControlName="reciversName" placeholder="Enter Recivers Name">
+        <mat-error *ngIf="errorHandling('reciversName', 'required')" style="color:#f70101 !important;">
+            Recivers Name is <strong>requird!</strong>
+        </mat-error>
+    </mat-form-field>
+      <!------------------>
+
+
+       <!----AWB NUMBER-->
+    <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput type="text" class="form-input" formControlName="awbNumber" placeholder="Enter AWB Number">
+        <mat-error *ngIf="errorHandling('awbNumber', 'required')" style="color:#f70101 !important;">
+            AWB Number is <strong>requird!</strong>
+        </mat-error>
+    </mat-form-field>
+        <!--------------->
+    
+        <!--DELIVERY STATUS-->
+        <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput type="text" class="form-input" formControlName="deliveryStatus" placeholder="Enter Delivery Status">
+        <mat-error *ngIf="errorHandling('deliveryStatus', 'required')" style="color:#f70101 !important;">
+            Delivery Status is <strong>requird!</strong>
+        </mat-error>
+        </mat-form-field>
+      <!----------------->
+      
+      <!---DELIVERY ADDRESS-->
+        <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput type="text" class="form-input" formControlName="deliveryAddress" placeholder="Enter Delivery Address">
+        <mat-error *ngIf="errorHandling('deliveryAddress', 'required')" style="color:#f70101 !important;">
+          Delivery Address is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <!---------------->
+
+      <!----INVOICE NUMBER-->
+    <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput type="text" class="form-input" formControlName="invoiceNumber" placeholder="Enter Invoice Number">
+        <mat-error *ngIf="errorHandling('invoiceNumber', 'required')" style="color:#f70101 !important;">
+          Invoice Number is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <!------------------>
+    
+        <!------INVOICE DATE-->
+        <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput type="text" class="form-input" formControlName="invoiceDate" placeholder="Enter Invoice Date">
+          <mat-error *ngIf="errorHandling('invoiceDate', 'required')" style="color:#f70101 !important;">
+            Invoice Date is <strong>required</strong>
+          </mat-error> 
+        </mat-form-field>
+        <!---------------->
+        
+        <!-----INVOICE AMOUNT-->
+        <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput type="text" class="form-input" formControlName="invoiceAmount" placeholder="Enter Invoice Amount">
+        <mat-error *ngIf="errorHandling('invoiceAmount', 'required')" style="color:#f70101 !important;">
+            Invoice Amount is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <!------------->
+        
+        <!---SERIAL NUMBER-->
+        <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput type="text" class="form-input" formControlName="SERIALNO" placeholder="Enter SERIAL NUMBER">
+        <mat-error *ngIf="errorHandling('SERIALNO', 'required')" style="color:#f70101 !important;">
+          Serial Number is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+        <!---------------->
+        
+        <!----Product Category-->
+        <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput type="text" class="form-input" formControlName="PRODCATEGOTY" placeholder="Enter Product Category">
+        <mat-error *ngIf="errorHandling('PRODCATEGOTY', 'required')" style="color:#f70101 !important;">
+          Product Category is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+        <!-------------->
+
+        <!---MANUFACTURER-->
+    <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput type="text" class="form-input" formControlName="MANUFACTURER" placeholder="Enter Manufacturer">
+        <mat-error *ngIf="errorHandling('MANUFACTURER', 'required')" style="color:#f70101 !important;">
+          Manufacturer is <strong>required</strong>
+        </mat-error>
+       </mat-form-field>
+       <!------------->
+
+       <!----Product Description-->
+    <mat-form-field class="example-full-width" appearance="fill">
+        <textarea matInput class="form-input" formControlName="PRODDESC" placeholder="Enter Produc Description Here">
+        </textarea>
+        <mat-error *ngIf="errorHandling('PRODDESC', 'required')" style="color:#f70101 !important;">
+         Product Description is <strong>required</strong>
+        </mat-error>
+        </mat-form-field>
+        <!------------->
+
+         <!--DEAL ID -->
+    <mat-form-field class="example-full-width" appearance="fill">
+    
+        <input matInput type="text" class="form-input" formControlName="dealId" placeholder="Enter Your Deal ID">
+        <mat-error *ngIf="errorHandling('dealId', 'required')" style="color:#f70101 !important;">
+            Deal ID is <strong>required!</strong>
+        </mat-error>
+        </mat-form-field>
+
+    <!---------------->
+
+    
+    <!--ORDER NUMBER-->
+    <mat-form-field class="example-full-width" appearance="fill">
+    <input matInput type="text" class="form-input" formControlName="orderNumber" placeholder="Enter Your Order Number">
+    <mat-error *ngIf="errorHandling('orderNumber', 'required')" style="color:#f70101 !important;">
+      Order Number is <strong>required</strong>
+    </mat-error>
+    </mat-form-field>
+    <!--------------->
+
+        
+    <!---ENTRY DATE-->
+    <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput type="text" class="form-input" formControlName="entryDate" placeholder="Enter Entry Date">
+        <!-- <mat-error *ngIf="errorHandling('entryDate', 'required')" style="color:#f70101 !important;">
+          Entrry Date is <strong>required</strong>
+        </mat-error>  -->
+      </mat-form-field>
+        <!---------------->
+    
+        
+         
+        <!----Selller Name-->
+        <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput type="text" class="form-input" formControlName="sellerName" placeholder="Enter Seller Name">
+        <mat-error *ngIf="errorHandling('sellerName', 'required')" style="color:#f70101 !important;">
+          Seller Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+        <!---------------->
+    
+        <!----Seller Id-->
+        <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput type="text" class="form-input" formControlName="sellerID" placeholder="Enter Seller Id">
+        <mat-error *ngIf="errorHandling('sellerID', 'required')" style="color:#f70101 !important;">
+          Seller Id is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <!--------------------------------->
+    <!--REQUEST DATE 1-->
+    <mat-form-field class="example-full-width" appearance="fill">
+      <input matInput type="text" formControlName="rqstOne" class="form-input" placeholder="Request Date 1">
+      <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker> -->
+    </mat-form-field>
+    <!--------------->
+    
+    <!----REQUEST DATE 2-------->
+    <mat-form-field class="example-full-width" appearance="fill">
+      <input matInput type="text" formControlName="rqstTwo" class="form-input" placeholder="Request Date 2">
+      <!-- <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker> -->
+    </mat-form-field>
+    <!-------------->
+    
+    <!--REQUEST TEXT ONE-->
+    <mat-form-field class="example-full-width" appearance="fill">
+    <input matInput type="text" class="form-input" formControlName="rqstTextOne" placeholder="Enter Request Text 1">
+    <!-- <mat-error *ngIf="errorHandling('rqstTextOne', 'required')" style="color:#f70101 !important;">
+      Request Text One is <strong>required</strong>
+    </mat-error> -->
+    </mat-form-field>
+    <!------->
+   
+    <!--REQUEST TEXT TWO-->
+    <mat-form-field class="example-full-width" appearance="fill">
+    <input matInput type="text" class="form-input" formControlName="rqstTextTwo" placeholder="Enter Request Text 2">
+    <!-- <mat-error *ngIf="errorHandling('rqstTextTwo', 'required')" style="color:#f70101 !important;">
+      Request Text Two is <strong>required</strong>
+    </mat-error> -->
+    </mat-form-field>
+    <!------------------>
+
+   
+    <!-- <div *ngIf="isSubmit" class="invalid-feedback"> -->
+        <!-- <ion-text validationText *ngIf="form.email.errors.required">
+          <p>*Email is required!</p>
+        </ion-text>
+        <ion-text validationText *ngIf="form.email.errors.email">
+          <p>*Email must be a valid email address!</p>
+        </ion-text>
+       
+     </div> -->
+     <div>
+      <button type="submit">Submit</button>
+    </div>  
+
+</form>
+<div>
+  <div><b>if validation for field is true then data will be entered in this array</b></div>
+  <div>{{showResponse | json}}</div>
+  </div>
+<!-- <app-footer></app-footer> -->
+
+
+
+

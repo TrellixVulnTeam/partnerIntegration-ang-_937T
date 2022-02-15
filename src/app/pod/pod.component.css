@@ -1,0 +1,25 @@
+example-form-field {
+    display: block;
+    width: 50px;
+    min-width: 150px;
+    max-width: 500px;
+    width: 50%;
+    
+    
+}
+
+
+.example-full-width {
+  width: 100%;
+}
+button {
+  color:white;
+  background-color:black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px
+}

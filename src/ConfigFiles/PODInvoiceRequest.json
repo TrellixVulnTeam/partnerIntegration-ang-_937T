@@ -1,0 +1,258 @@
+{
+  "Request": [
+    {
+      "Id": "1",
+      "Remarks": "",
+      "JsonTag": "REQUESTID",
+      "DataType": "AN",
+      "ParamName": "Request ID",
+      "Min_len": "1",
+      "Max_len": "50",
+      "IsMandatory": "Yes"
+    },
+    {
+      "Id": "2",
+      "Remarks": "",
+      "JsonTag": "DATELASTSTATUS",
+      "DataType": "AN",
+      "ParamName": "Date Last Status",
+      "Min_len": "0",
+      "Max_len": "8",
+      "IsMandatory": "No"
+    },
+    {
+      "Id": "3",
+      "Remarks": "",
+      "JsonTag": "COURIERNAME",
+      "DataType": "AN",
+      "ParamName": "Courier Name",
+      "Min_len": "1",
+      "Max_len": "100",
+      "IsMandatory": "Yes"
+    },
+    {
+      "Id": "4",
+      "Remarks": "",
+      "JsonTag": "RECEIVERNAMERNAME",
+      "DataType": "AN",
+      "ParamName": "Receivers Name",
+      "Min_len": "1",
+      "Max_len": "60",
+      "IsMandatory": "Yes"
+    },
+    {
+      "Id": "5",
+      "Remarks": "",
+      "JsonTag": "AWBNO",
+      "DataType": "AN",
+      "ParamName": "AWB Number",
+      "Min_len": "1",
+      "Max_len": "25",
+      "IsMandatory": "Yes"
+    },
+    {
+      "Id": "6",
+      "Remarks": "",
+      "JsonTag": "DELIVERYSTATUS",
+      "DataType": "AN",
+      "ParamName": "Delivery Status",
+      "Min_len": "1",
+      "Max_len": "500",
+      "IsMandatory": "Yes"
+    },
+    {
+      "Id": "7",
+      "Remarks": "",
+      "JsonTag": "DELIVERYADDRESS",
+      "DataType": "AN",
+      "ParamName": "Delivery Address",
+      "Min_len": "0",
+      "Max_len": "50",
+      "IsMandatory": "Yes"
+    },
+    {
+      "Id": "8",
+      "Remarks": "",
+      "JsonTag": "INVOICENO",
+      "DataType": "N",
+      "ParamName": "Invoice Number",
+      "Min_len": "0",
+      "Max_len": "15",
+      "IsMandatory": "Yes"
+    },
+    {
+      "Id": "9",
+      "Remarks": "",
+      "JsonTag": "INVOICEDATE",
+      "DataType": "N",
+      "ParamName": "Invoice date",
+      "Min_len": "1",
+      "Max_len": "15",
+      "IsMandatory": "Yes"
+    },
+    {
+      "Id": "10",
+      "Remarks": "",
+      "JsonTag": "INVOICEAMT",
+      "DataType": "N",
+      "ParamName": "Invoice Amount",
+      "Min_len": "0",
+      "Max_len": "15",
+      "IsMandatory": "Yes"
+    },
+    {
+      "Id": "11",
+      "Remarks": "",
+      "JsonTag": "SERIALNO",
+      "DataType": "N",
+      "ParamName": "Serial Number",
+      "Min_len": "1",
+      "Max_len": "100",
+      "IsMandatory": "Yes"
+    },
+    {
+      "Id": "12",
+      "Remarks": "",
+      "JsonTag": "PRODCATEGOTY",
+      "DataType": "AN",
+      "ParamName": "Product Category",
+      "Min_len": "1",
+      "Max_len": "10",
+      "IsMandatory": "Yes"
+    },
+    {
+      "Id": "13",
+      "Remarks": "",
+      "JsonTag": "MANUFACTURER",
+      "DataType": "AN",
+      "ParamName": "Manufacturer",
+      "Min_len": "0",
+      "Max_len": "100",
+      "IsMandatory": "Yes"
+    },
+    {
+      "Id": "14",
+      "Remarks": "",
+      "JsonTag": "PRODDESC",
+      "DataType": "AN",
+      "ParamName": "Product ParamName",
+      "Min_len": "1",
+      "Max_len": "100",
+      "IsMandatory": "Yes"
+    },
+    {
+      "Id": "15",
+      "Remarks": "Unique Transaction ID",
+      "JsonTag": "DEALID",
+      "DataType": "AN",
+      "ParamName": "Deal ID",
+      "Min_len": "10",
+      "Max_len": "60",
+      "IsMandatory": "Yes"
+    },
+    {
+      "Id": "16",
+      "Remarks": "",
+      "JsonTag": "ORDERNO",
+      "DataType": "AN",
+      "ParamName": "Order No",
+      "Min_len": "1",
+      "Max_len": "32",
+      "IsMandatory": "Yes"
+    },
+    {
+      "Id": "17",
+      "Remarks": "",
+      "JsonTag": "ENTRYDATEE",
+      "DataType": "N",
+      "ParamName": "Entry Date",
+      "Min_len": "1",
+      "Max_len": "8",
+      "IsMandatory": "No"
+    },
+    {
+      "Id": "18",
+      "Remarks": "",
+      "JsonTag": "SELLERNAME",
+      "DataType": "AN",
+      "ParamName": "Seller Name",
+      "Min_len": "1",
+      "Max_len": "100",
+      "IsMandatory": "Yes"
+    },
+    {
+      "Id": "19",
+      "Remarks": "Dealer Code to be passed",
+      "JsonTag": "SELLERID",
+      "DataType": "AN",
+      "ParamName": "Seller ID",
+      "Min_len": "1",
+      "Max_len": "100",
+      "IsMandatory": "Yes"
+    },
+    {
+      "Id": "20",
+      "Remarks": "",
+      "JsonTag": "REQUESTDATE1",
+      "DataType": "N",
+      "ParamName": "Request Date 1",
+      "Min_len": "0",
+      "Max_len": "8",
+      "IsMandatory": "No"
+    },
+    {
+      "Id": "21",
+      "Remarks": "",
+      "JsonTag": "REQUESTDATE2",
+      "DataType": "N",
+      "ParamName": "Request Date 2",
+      "Min_len": "0",
+      "Max_len": "8",
+      "IsMandatory": "No"
+    },
+    {
+      "Id": "22",
+      "Remarks": "",
+      "JsonTag": "REQUESTTEXT1",
+      "DataType": "AN",
+      "ParamName": "Request Text 1",
+      "Min_len": "0",
+      "Max_len": "50",
+      "IsMandatory": "No"
+    },
+    {
+      "Id": "23",
+      "Remarks": "",
+      "JsonTag": "REQUESTTEXT2",
+      "DataType": "AN",
+      "ParamName": "Request Text 2",
+      "Min_len": "0",
+      "Max_len": "50",
+      "IsMandatory": "No"
+    }
+    
+  ]
+}
+    
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

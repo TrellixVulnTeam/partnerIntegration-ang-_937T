@@ -1,0 +1,125 @@
+<!-- <app-tabs></app-tabs> -->
+<form class="example-form" [formGroup]="cancelForm" (ngSubmit)="register()">
+    <!-- <div *ngIf="isSubmit" class="invalid-feedback">
+         <ion-text validationText *ngIf="form.name.errors.required">
+          <p>*Name is required!</p>
+        </ion-text>
+    </div> -->
+    <!--DEALER ID-->
+    <mat-form-field class="example-full-width" appearance="fill">
+    <input matInput type="text" class="form-input" formControlName="dealerId" placeholder="Enter Your Dealer ID">
+    <mat-error *ngIf="errorHandling('dealerId', 'required')" style="color:#f70101 !important;">
+      Dealer Id  is <strong>required</strong>
+    </mat-error>
+    </mat-form-field>
+    <!---------------->
+    
+    <!--DEAL ID-->
+    <mat-form-field class="example-full-width" appearance="fill">
+    <input matInput type="text" class="form-input" formControlName="dealId" placeholder="Enter Your Deal Id">
+    <mat-error *ngIf="errorHandling('dealId', 'required')" style="color:#f70101 !important;">
+      Deal Id is <strong>required</strong>
+    </mat-error>
+    </mat-form-field>
+    <!--------------->
+
+    <!--LOAN AMOUNT -->
+    <mat-form-field class="example-full-width" appearance="fill">
+    
+    <input matInput type="text" class="form-input" formControlName="loanAmount" placeholder="Enter Loan Amount">
+    <mat-error *ngIf="errorHandling('loanAmount', 'required')" style="color:#f70101 !important;">
+        Loan Amount is <strong>required!</strong>
+    </mat-error>
+    </mat-form-field>
+    <!---------------->
+
+    <!--- VALIDATION KEY -->
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput type="text" class="form-input" formControlName="validationKey" placeholder="Enter Validation Key">
+        <mat-error *ngIf="errorHandling('validationKey', 'required')" style="color:#f70101 !important;">
+            Validation Key is <strong>requird!</strong>
+        </mat-error>
+    </mat-form-field>
+      <!------------------>
+
+       <!---Order number-->
+    <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput type="text" class="form-input" formControlName="orderNumber" placeholder="Enter Order Number">
+        <mat-error *ngIf="errorHandling('orderNumber', 'required')" style="color:#f70101 !important;">
+          Order Number is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <!---------------->
+
+    <!--REQUEST ID--->
+    <mat-form-field class="example-full-width" appearance="fill">
+    <input matInput type="text" class="form-input" formControlName="requestId" placeholder="Enter Request Id">
+    <mat-error *ngIf="errorHandling('requestId', 'required')" style="color:#f70101 !important;">
+      Request Id is <strong>required!</strong>
+    </mat-error>
+    </mat-form-field>
+   <!------->
+    <!--REQUEST DATE 1-->
+    <mat-form-field class="example-full-width" appearance="fill">
+      <input matInput type="text" formControlName="rqstOne" class="form-input" placeholder="Request Date 1">
+      <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker> -->
+    </mat-form-field>
+    <!--------------->
+    
+    <!----REQUEST DATE 2-------->
+    <mat-form-field class="example-full-width" appearance="fill">
+      <input matInput type="text" formControlName="rqstTwo" class="form-input" placeholder="Request Date 2">
+      <!-- <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker> -->
+    </mat-form-field>
+    <!-------------->
+    
+    <!--REQUEST TEXT ONE-->
+    <mat-form-field class="example-full-width" appearance="fill">
+    <input matInput type="text" class="form-input" formControlName="rqstTextOne" placeholder="Enter Request Text 1">
+    <mat-error *ngIf="errorHandling('rqstTextOne', 'required')" style="color:#f70101 !important;">
+      Request Text One is <strong>required</strong>
+    </mat-error>
+    </mat-form-field>
+    <!------->
+   
+    <!--REQUEST TEXT TWO-->
+    <mat-form-field class="example-full-width" appearance="fill">
+    <input matInput type="text" class="form-input" formControlName="rqstTextTwo" placeholder="Enter Request Text 2">
+    <mat-error *ngIf="errorHandling('rqstTextTwo', 'required')" style="color:#f70101 !important;">
+      Request Text Two is <strong>required</strong>
+    </mat-error>
+    </mat-form-field>
+    <!------------------>
+
+   
+  
+ 
+   
+ 
+   
+    <!-- <div *ngIf="isSubmit" class="invalid-feedback"> -->
+        <!-- <ion-text validationText *ngIf="form.email.errors.required">
+          <p>*Email is required!</p>
+        </ion-text>
+        <ion-text validationText *ngIf="form.email.errors.email">
+          <p>*Email must be a valid email address!</p>
+        </ion-text>
+       
+     </div> -->
+     <div>
+      <button type="submit">Submit</button>
+    </div>  
+
+</form>
+<div>
+  <div><b>if validation for field is true then data will be entered in this array</b></div>
+  <div>{{showResponse | json}}</div>
+  </div>
+<!-- <app-footer></app-footer> -->
+
+
+
+

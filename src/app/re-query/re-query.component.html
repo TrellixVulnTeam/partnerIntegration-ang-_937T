@@ -1,0 +1,119 @@
+<!-- <app-tabs></app-tabs> -->
+<form class="example-form" [formGroup]="requeryForm" (ngSubmit)="register()">
+    <!--DELEAR ID -->
+    <mat-form-field class="example-full-width" appearance="fill">
+   
+       <input matInput type="text" class="form-input" formControlName="dealerId" placeholder="Enter Your Dealer ID">
+       <mat-error *ngIf="errorHandling('dealerId', 'required')" style="color:#f70101 !important;">
+           Dealer ID is <strong>required!</strong>
+       </mat-error>
+       </mat-form-field>
+       <!---------------->
+
+    <!----Requery Id-->
+    <mat-form-field class="example-full-width" appearance="fill">
+       <input matInput type="text" class="form-input" formControlName="REQUERYID" placeholder="Enter Requery Id">
+       <mat-error *ngIf="errorHandling('REQUERYID', 'required')" style="color:#f70101 !important;">
+         Requery Id is <strong>required</strong>
+       </mat-error>
+     </mat-form-field>
+     <!------------------------>
+
+   <!--CARD NUMBER-->
+   <mat-form-field class="example-full-width" appearance="fill">
+   <input matInput type="text" class="form-input" formControlName="cardNumber" placeholder="Enter Your Card Number">
+   <mat-error *ngIf="errorHandling('cardNumber', 'required')" style="color:#f70101 !important;">
+     Card Number  is <strong>required</strong>
+   </mat-error>
+   </mat-form-field>
+   <!---------------->
+   
+   <!--ORDER NUMBER-->
+   <mat-form-field class="example-full-width" appearance="fill">
+   <input matInput type="text" class="form-input" formControlName="orderNumber" placeholder="Enter Your Order Number">
+   <mat-error *ngIf="errorHandling('orderNumber', 'required')" style="color:#f70101 !important;">
+     Order Number is <strong>required</strong>
+   </mat-error>
+   </mat-form-field>
+   <!--------------->
+
+   <!---LOAN AMOUNT-->
+   <mat-form-field class="example-full-width" appearance="fill">
+    <input matInput type="text" class="form-input" formControlName="loanAmount" placeholder="Enter Loan Amount">
+    <mat-error *ngIf="errorHandling('loanAmount', 'required')" style="color:#f70101 !important;">
+      Loan Amount is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <!----------------> 
+
+   <!--- VALIDATION KEY -->
+
+   <mat-form-field class="example-full-width" appearance="fill">
+       <input matInput type="text" class="form-input" formControlName="validationKey" placeholder="Enter Validation Key">
+       <mat-error *ngIf="errorHandling('validationKey', 'required')" style="color:#f70101 !important;">
+           Validation Key is <strong>requird!</strong>
+       </mat-error>
+   </mat-form-field>
+     <!------------------>
+
+   <!--REQUEST ID--->
+   <mat-form-field class="example-full-width" appearance="fill">
+   <input matInput type="text" class="form-input" formControlName="requestId" placeholder="Enter Request Id">
+   <mat-error *ngIf="errorHandling('requestId', 'required')" style="color:#f70101 !important;">
+     Request Id is <strong>required!</strong>
+   </mat-error>
+   </mat-form-field>
+  <!------->
+
+  <!----Acquiring Channel Id-->
+  <mat-form-field class="example-full-width" appearance="fill">
+   <input matInput type="text" class="form-input" formControlName="ACQCHNLID" placeholder="Enter Acquiring Channel ID">
+   <mat-error *ngIf="errorHandling('ACQCHNLID', 'required')" style="color:#f70101 !important;">
+    Acquiring Channel ID is <strong>required</strong>
+   </mat-error>
+ </mat-form-field>
+ <!------------------>
+
+   <!--REQUEST DATE 1-->
+   <mat-form-field class="example-full-width" appearance="fill">
+     <input matInput  type="text" class="form-input" formControlName="rqstOne" placeholder="Request Date 1">
+   </mat-form-field>
+   <!--------------->
+   
+   <!----REQUEST DATE 2-------->
+   <mat-form-field class="example-full-width" appearance="fill">
+     <input matInput  type="text" class="form-input" formControlName="rqstTwo" placeholder="Request Date 2">
+   </mat-form-field>
+   <!-------------->
+   
+   <!--REQUEST TEXT ONE-->
+   <mat-form-field class="example-full-width" appearance="fill">
+   <input matInput type="text" class="form-input" formControlName="rqstTextOne" placeholder="Enter Request Text 1">
+   <!-- <mat-error *ngIf="errorHandling('rqstTextOne', 'required')" style="color:#f70101 !important;">
+     Request Text One is <strong>required</strong>
+   </mat-error> -->
+   </mat-form-field>
+   <!------->
+  
+   <!--REQUEST TEXT TWO-->
+   <mat-form-field class="example-full-width" appearance="fill">
+   <input matInput type="text" class="form-input" formControlName="rqstTextTwo" placeholder="Enter Request Text 2">
+   <!-- <mat-error *ngIf="errorHandling('rqstTextTwo', 'required')" style="color:#f70101 !important;">
+     Request Text Two is <strong>required</strong>
+   </mat-error> -->
+   </mat-form-field>
+   <!------------------>
+    <div>
+     <button type="submit">Submit</button>
+   </div>  
+
+</form>
+<div>
+ <div><b>if validation for field is true then data will be entered in this array</b></div>
+ <div>{{showResponse | json}}</div>
+ </div>
+<!-- <app-footer></app-footer> -->
+
+
+
+
