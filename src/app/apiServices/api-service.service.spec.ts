@@ -31,6 +31,10 @@ describe('ApiServiceService', () => {
   
   it('api name not found',() =>{
   let  apiName1="";
+  service.s={BaseUrl: "https://bfluat.in.worldline-solutions.com/wlbflEcomRest/WLECOMRest.svc/",
+  IV: "1234567887654321",
+  KEY: "B0L7iJ2sytuz4iOM2DpK06pkHdhZEV8t",
+  SupplierIDLabel: "DEALERID"};
   let msg=`{"Error": 'Api Name Not found'}`;
    let error= service.SendRequest('{}',apiName1)
    .subscribe(data=>{
@@ -44,14 +48,122 @@ describe('ApiServiceService', () => {
 
   it('#getObservableValue should return value from observable',() => {
     //(done: DoneFn) => {
-       apiName = "" ;
-      //  apiName = "CancelledTransaction" ;
+      // let apiName1 = "" ;
+       let apiName1 = "CancelledTransaction" ;
+       let json={
+        "Request": [
+          {
+            "Id": "1",
+            "Remarks": "Dealer Code",
+            "JsonTag": "DEALERID",
+            "DataType": "N",
+            "ParamName": "Dealer ID",
+            "Min_len": "0",
+            "Max_len": "10",
+            "IsMandatory": "Yes"
+          },
+          {
+            "Id": "2",
+            "Remarks": "Deal ID generated post Authorization",
+            "JsonTag": "DEALID",
+            "DataType": "AN",
+            "ParamName": " Deal ID",
+            "Min_len": "10",
+            "Max_len": "60",
+            "IsMandatory": "Yes"
+          },
+          {
+            "Id": "3",
+            "Remarks": "Amount to be cancelled",
+            "JsonTag": "LOANAMT",
+            "DataType": "N",
+            "ParamName": "Loan Amount",
+            "Min_len": "1",
+            "Max_len": "15",
+            "IsMandatory": "Yes"
+          },
+          {
+            "Id": "4",
+            "Remarks": "Validation Key",
+            "JsonTag": "VALIDATIONKEY",
+            "DataType": "N",
+            "ParamName": "VALIDATION KEY",
+            "Min_len": "1",
+            "Max_len": "24",
+            "IsMandatory": "Yes"
+          },
+          {
+            "Id": "5",
+            "Remarks": "Order Number at time of Authorization",
+            "JsonTag": "ORDERNO",
+            "DataType": "AN",
+            "ParamName": "Order Number",
+            "Min_len": "1",
+            "Max_len": "23",
+            "IsMandatory": "Yes"
+          },
+          {
+            "Id": "6",
+            "Remarks": "Unique Request ID",
+            "JsonTag": "REQUESTID",
+            "DataType": "AN",
+            "ParamName": "Request ID",
+            "Min_len": "1",
+            "Max_len": "50",
+            "IsMandatory": "Yes"
+          },
+          {
+            "Id": "7",
+            "Remarks": "",
+            "JsonTag": "REQUESTDATE1",
+            "DataType": "N",
+            "ParamName": "REQUEST DATE1",
+            "Min_len": "0",
+            "Max_len": "14",
+            "IsMandatory": "No"
+          },
+          {
+            "Id": "8",
+            "Remarks": "",
+            "JsonTag": "REQUESTDATE2",
+            "DataType": "N",
+            "ParamName": "REQUEST DATE2",
+            "Min_len": "0",
+            "Max_len": "14",
+            "IsMandatory": "No"
+          },
+          {
+            "Id": "9",
+            "Remarks": "",
+            "JsonTag": "REQUESTTEXT1",
+            "DataType": "N",
+            "ParamName": "REQUEST TEXT1",
+            "Min_len": "0",
+            "Max_len": "15",
+            "IsMandatory": "No"
+          },
+          {
+            "Id": "10",
+            "Remarks": "",
+            "JsonTag": "REQUESTTEXT2",
+            "DataType": "N",
+            "ParamName": "REQUEST TEXT2",
+            "Min_len": "0",
+            "Max_len": "2",
+            "IsMandatory": "No"
+          }
+        ]
+      }
+ 
+       
+            
       // expect(service.LoadSpecs(apiName)).toThrowError();
       // expect(service.LoadSpecs(apiName)).toThrowMatching()
       // ||"Eligibilty"||"InitiateOTP"||"PODInvoice"||"Requery"||"AuthTransaction";
-    service.LoadSpecs(apiName).subscribe(value => {
+    service.LoadSpecs(apiName1).subscribe(value => {
       console.log('est value',value);
-      expect(value).toBe(value)
+      // json.Request[0].Id
+      expect(value.Request[0].Id).toEqual(json.Request[0].Id)
      // expect(value).not.toBeNull()
      //expect(value).toBe('Some Value')
 
@@ -59,7 +171,7 @@ describe('ApiServiceService', () => {
    },error=>{
     console.log('est value',error);
 
-     expect(error).toBe(error)
+     expect(error).toEqual(error)
    // expect(error).not.toBeNull()
     //expect(error).toBe('Some Value')
 

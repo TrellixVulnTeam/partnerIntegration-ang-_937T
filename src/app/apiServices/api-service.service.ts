@@ -64,7 +64,7 @@ export class ApiServiceService {
         console.log('load Specs data',responseData);
         return responseData;
        }),
-        catchError(this.handleError)
+        catchError(error=> this.handleError(error))
        );
        //return httpResponse;
         

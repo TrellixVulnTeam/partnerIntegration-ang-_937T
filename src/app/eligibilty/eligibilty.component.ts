@@ -80,7 +80,7 @@ export class EligibiltyComponent implements OnInit {
       this.api.LoadSpecs(apiName).subscribe((data) => {
       
         console.log(data);
-        this.eligibiltyCompare = data.Request;
+        this.eligibiltyCompare = data?.Request;
         console.log('eligibilty',this.eligibiltyCompare);
       },
       error => {
@@ -218,7 +218,7 @@ export class EligibiltyComponent implements OnInit {
       this.all = [this.eligibiltyForm.value.dealerId, this.eligibiltyForm.value.mobile, this.eligibiltyForm.value.cardNumber, this.eligibiltyForm.value.orderNumber, this.eligibiltyForm.value.pinCode,this.eligibiltyForm.value.loanAmount,this.eligibiltyForm.value.validationKey, this.eligibiltyForm.value.requestId, this.eligibiltyForm.value.tncAccept, this.eligibiltyForm.value.rqstOne, this.eligibiltyForm.value.rqstTwo, this.eligibiltyForm.value.rqstTextOne, this.eligibiltyForm.value.schemeId, this.eligibiltyForm.value.tenure, this.eligibiltyForm.value.ProductDesc]
       for(let a in this.all ){
         console.log('its data',a,this.eligibiltyCompare[a])
-        if(this.eligibiltyCompare[a].IsMandatory === "Yes"){
+        if(this.eligibiltyCompare[a]?.IsMandatory === "Yes"){
           // if(all[a]=== ''|| all[a] === null || all[a] === undefined){
           //   this.showResponse = {"Message": + this.eligibiltyCompare[a].JsonTag + ' ' + 'is Mandatory'};
           // console.log('empty response',this.showResponse);
@@ -227,7 +227,7 @@ export class EligibiltyComponent implements OnInit {
           console.log('its mandatory',this.all[a]);
           
             let data: patnerInput[] = [{
-            JSON_TAG: this.eligibiltyCompare[a].JsonTag,
+            JSON_TAG: this.eligibiltyCompare[a]?.JsonTag,
               value: this.all[a]
             }]
           //BflBase.setValue(data[0].JSON_TAG,data[0].value);
@@ -235,7 +235,7 @@ export class EligibiltyComponent implements OnInit {
            this.isValid = this.check(data, a);
            if(this.isValid === true){
             //let apiName = "Eligibility"
-             let num = data[0].value;
+             let num = data[0]?.value;
                let c = num.toString()
                storedata(c,a,this.eligibiltyCompare)
                //this.allData.push(storedata(c,a,this.eligibiltyCompare));
@@ -290,7 +290,7 @@ export class EligibiltyComponent implements OnInit {
            //  }
            // else { 
               const data = {
-                JSON_TAG: this.eligibiltyCompare[a].JsonTag,
+                JSON_TAG: this.eligibiltyCompare[a]?.JsonTag,
                 value: null
               }
                console.log('entered Data', data);
@@ -317,7 +317,7 @@ export class EligibiltyComponent implements OnInit {
          else {
            if(this.isSubmit === true){
             let data: patnerInput[]= [{
-               JSON_TAG: this.eligibiltyCompare[a].JsonTag,
+               JSON_TAG: this.eligibiltyCompare[a]?.JsonTag,
                value: this.all[a]
              }]
              console.log('entered Data', data);
@@ -372,6 +372,10 @@ export class EligibiltyComponent implements OnInit {
                     this.showResponse = "{" + "\"Message\":\"Please provide API name" + "\"}";
                     alert('Please Define Api Name to Proceed');
                   }
+                  if(this.showResponse?.Message!=""){
+                    return this.showResponse?.Message
+                  }
+                  // if(!this.showResponse?.Message){
              this.api.SendRequest(s,apiName).subscribe((data) => {
                
                console.log('respnse data',data);
@@ -382,9 +386,10 @@ export class EligibiltyComponent implements OnInit {
                console.log('error occured',error);
                this.showResponse = {error};
              });
+            
              let dc = encrypt.decryptionData(s);
             //console.log(dc);
-
+// }
   }
 }
   
@@ -397,14 +402,14 @@ export class EligibiltyComponent implements OnInit {
     let a = step;
       let num = data[0].value;
       console.log(num);
-      let mand = this.eligibiltyCompare[a].IsMandatory;
-      let min = parseInt(this.eligibiltyCompare[a].Min_len);
-      let max = parseInt(this.eligibiltyCompare[a].Max_len);
+      let mand = this.eligibiltyCompare[a]?.IsMandatory;
+      let min = parseInt(this.eligibiltyCompare[a]?.Min_len);
+      let max = parseInt(this.eligibiltyCompare[a]?.Max_len);
       
-      let valid = (this.eligibiltyCompare[a].DataType === 'N') ? checkNumber(mand,num,min,max) : ( this.eligibiltyCompare[a].DataType === 'AN') ? checkAlpha(mand,num,min,max) : ( this.eligibiltyCompare[a].DataType === 'C') ? checkChar(mand,num,min,max): 'fail';
+      let valid = (this.eligibiltyCompare[a]?.DataType === 'N') ? checkNumber(mand,num,min,max) : ( this.eligibiltyCompare[a]?.DataType === 'AN') ? checkAlpha(mand,num,min,max) : ( this.eligibiltyCompare[a]?.DataType === 'C') ? checkChar(mand,num,min,max): 'fail';
       (valid === true)?this.isValid =true:this.isValid=false;
       //let n = this.eligibiltyCompare[a].ParamName;
-      (valid === 'empty field')?this.showResponse = {"Message": "The field " +this.eligibiltyCompare[a].ParamName+ " is required"}:(valid === "not number")? this.showResponse = {"Message":'Please Enter only numbers for field '+ this.eligibiltyCompare[a].ParamName +'.'}:(valid === "not alphanumeric")?this.showResponse = {"Message":'Please Enter only alphanumeric Characters for field '+ this.eligibiltyCompare[a].ParamName +'.'}:(valid === "not char")?this.showResponse = {"Message":'Please Enter only alphanumeric Characters for field '+ this.eligibiltyCompare[a].ParamName +'.'}:(valid=== false)?this.showResponse ={"Message":'Please Enter a '+ this.eligibiltyCompare[a].ParamName +' with Minimum and Maximum Length of '+ this.eligibiltyCompare[a].Min_len +' & ' + this.eligibiltyCompare[a].Max_len +'.'}:this.onReset();
+      (valid === 'empty field')?this.showResponse = {"Message": "The field " +this.eligibiltyCompare[a]?.ParamName+ " is required"}:(valid === "not number")? this.showResponse = {"Message":'Please Enter only numbers for field '+ this.eligibiltyCompare[a]?.ParamName +'.'}:(valid === "not alphanumeric")?this.showResponse = {"Message":'Please Enter only alphanumeric Characters for field '+ this.eligibiltyCompare[a]?.ParamName +'.'}:(valid === "not char")?this.showResponse = {"Message":'Please Enter only alphanumeric Characters for field '+ this.eligibiltyCompare[a]?.ParamName +'.'}:(valid=== false)?this.showResponse ={"Message":'Please Enter a '+ this.eligibiltyCompare[a]?.ParamName +' with Minimum and Maximum Length of '+ this.eligibiltyCompare[a]?.Min_len +' & ' + this.eligibiltyCompare[a]?.Max_len +'.'}:this.onReset();
        if(valid !== true){
          alert(this.showResponse.Message);
        }
