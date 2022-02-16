@@ -56,6 +56,10 @@ export class ApiServiceService {
   
   public LoadSpecs(apiName): Observable<any> {
       // synchronous operation
+      if(apiName === ''|| apiName === null ||apiName ===undefined){
+        const message :any = `{"Error": 'Api Name Not found'}`
+       return throwError(message);
+      }
      return this.http.get('ConfigFiles/'+apiName+'Request.json').pipe(map((responseData) => {
         console.log('load Specs data',responseData);
         return responseData;
@@ -68,7 +72,7 @@ export class ApiServiceService {
   
  BFLDATA():Observable <any> {
   
-   const data = this.http.get("ConfigFiles/BFLApppConfig.json").pipe(map((response) => {
+   const data = this.http.get("ConfigFiles/BFLAppConfig.json").pipe(map((response) => {
     console.log('bfl',response);
     return response;
    }),
@@ -99,7 +103,7 @@ SendRequest(encrypt,apiName):Observable <any>{
   })
   if(apiName === ''|| apiName === null ||apiName ===undefined){
     const message :any = `{"Error": 'Api Name Not found'}`
-   return message;
+   return throwError(message);
   }
   if(this.s.BaseUrl === ''|| this.s.BaseUrl === null || this.s.BaseUrl === undefined){
    const responseData:any = `{"Error": 'Base Url Not Found'}`

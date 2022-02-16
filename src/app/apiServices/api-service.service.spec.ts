@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
 import {
   HttpClientTestingModule,
   HttpTestingController
@@ -8,6 +8,7 @@ import { Current_Api_Name } from 'src/apiCalls/ccommon';
 import { off } from 'process';
 import { Observable, of } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
+import { error } from 'console';
 
 describe('ApiServiceService', () => {
   let service: ApiServiceService;
@@ -27,19 +28,38 @@ describe('ApiServiceService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+  
+  it('api name not found',() =>{
+  let  apiName1="";
+  let msg=`{"Error": 'Api Name Not found'}`;
+   let error= service.SendRequest('{}',apiName1)
+   .subscribe(data=>{
+    expect(data).toEqual(msg)
+   },error=>{
+    expect(error).toEqual(msg)
+   })
+  //  expect(error).toEqual(msg)
+
+  })
+
   it('#getObservableValue should return value from observable',() => {
     //(done: DoneFn) => {
-      let apiName:any = "CancelledTransaction" ;
+       apiName = "" ;
+      //  apiName = "CancelledTransaction" ;
+      // expect(service.LoadSpecs(apiName)).toThrowError();
+      // expect(service.LoadSpecs(apiName)).toThrowMatching()
       // ||"Eligibilty"||"InitiateOTP"||"PODInvoice"||"Requery"||"AuthTransaction";
     service.LoadSpecs(apiName).subscribe(value => {
       console.log('est value',value);
-      expect(value).toBeDefined()
+      expect(value).toBe(value)
      // expect(value).not.toBeNull()
      //expect(value).toBe('Some Value')
 
      // done();
    },error=>{
-     expect(error).toBeDefined()
+    console.log('est value',error);
+
+     expect(error).toBe(error)
    // expect(error).not.toBeNull()
     //expect(error).toBe('Some Value')
 
